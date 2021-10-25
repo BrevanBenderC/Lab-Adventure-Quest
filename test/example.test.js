@@ -1,4 +1,4 @@
-import { generatePlayer } from '../utils.js';
+import { generatePlayer, savePlayer } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -13,7 +13,22 @@ test('generatePlayer creates character from user input', (expect) => {
     const formData = new FormData();
     formData.set('class', 'warrior');
     formData.set('name', 'Player');
-    
+
     const actual = generatePlayer(formData);
     expect.deepEqual(actual, samplePlayer);
-})
+});
+
+test('savePlayer should put user data into local storage', (expect) => {
+    localStorage.removeItem('PLAYER');
+    const sampleObject = {
+        completed: {},
+        gold: 0,
+        hp: 100,
+        name: 'Player',
+        class: 'warrior',
+    };
+
+    savePlayer(sampleObject);
+    const actual = JSON.parse(localStorage.getItem('PLAYER'));
+    expect.deepEqual(actual, sampleObject);
+});
