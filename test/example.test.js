@@ -42,9 +42,9 @@ test('getUser should return the user object from localStorage', (expect)=>{
     const userObject = { 
         completed: {},
         gold: 0,
-        hp: 35,
-        name: 'julie',
-        race: 'cleric',
+        hp: 100,
+        name: 'Player',
+        race: 'warrior',
     };
 
     savePlayer(userObject);
@@ -57,34 +57,31 @@ test('scoreQuest should update gold, hp and completed on the userObject', (expec
     const userObject = { 
         completed: {},
         gold: 0,
-        hp: 35,
-        name: 'julie',
-        race: 'cleric',
+        hp: 100,
+        name: 'Player',
+        race: 'warrior',
     };
     const choiceObject = {
-        id: 'run',
-        description: 'Get the hell out of the village',
+        id: 'negotiate',
+        description: 'Try to Charm Your Way Out',
         result: `
-            You high tail it in the opposite direction. Luckily,
-            in the panic you find a bag on the ground with 15 gold.
-            Unluckily, you trip over a discarded wagon wheel on your
-            way out of town and take 40 hp damage. 
+        You make conversation with the disgusting little grunts and bond over a mutual hatred of vegetables. After sharing a meal they send you on your way with some extra supplies.
         `,
-        hp: -35,
-        gold: 15
+        hp: 0,
+        gold: 45
     };
-    const questId = 'dragon';
+    const questId = 'goblins';
 
     scoreQuest(choiceObject, questId, userObject);
-    expect.equal(userObject.hp, 0);
-    expect.equal(userObject.gold, 15);
+    expect.equal(userObject.hp, 100);
+    expect.equal(userObject.gold, 45);
     expect.equal(userObject.completed[questId], true);
 
 });
 
 test('hasCompletedAllQuests returns true if the user has completed all quests', (expect)=>{
     const userObject = {
-        completed: { dragon: true, treasure: true, monsters: true },
+        completed: { goblins: true, werewolf: true, fork: true },
     };
 
     const actual = hasCompletedAllQuests(userObject);
