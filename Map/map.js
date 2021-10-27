@@ -1,6 +1,6 @@
-import quests from '../data/quest-data.js';
+import quests from '../data/questData.js';
 import { getUser, hasCompletedAllQuests } from '../utils.js';
-const mapLinks = document.getElementById('map-links');
+const questLink = document.getElementById('questLinks');
 const user = getUser();
 
 if (user.hp <= 0 || hasCompletedAllQuests(user)){
@@ -20,12 +20,12 @@ function displayLink(quest){
     const a = document.createElement('a');
     a.href = `../quest/?id=${quest.id}`;
     a.textContent = quest.title;
-    mapLinks.appendChild(a);
+    questLink.appendChild(a);
 }
 
 function displaySpan(quest){
     const span = document.createElement('span');
     span.textContent = quest.title;
 
-    mapLinks.appendChild(span);
+    questLink.appendChild(span);
 }
