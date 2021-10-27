@@ -1,0 +1,4 @@
+#mapArea {
+    display: flex;
+    flex-direction: column;
+}
