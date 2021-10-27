@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
-    </header>
+
+    <div id="create">Create Your Character</div>    
     <main>
         <form id="userInput">
             <label for="name">
@@ -29,24 +29,24 @@
             <legend>Pick Your Class:</legend>
         <p id="classTypes">
             <label>
-                <input type="radio" name="class" required value="warrior">
-                <img src="">
-                warrior
+                <input type="radio" name="class" required value="barbarian">
+                Barbarian
+                <img class="classes" src="https://www.dndbeyond.com/avatars/thumbnails/6/342/420/618/636272680339895080.png">
             </label>
             <label>
-                <input type="radio" name="class" required value="archer">
-                <img src="">
-                Archer
+                <input type="radio" name="class" required value="druid">
+                Druid
+                <img class="classes" src="https://www.dndbeyond.com/avatars/thumbnails/6/346/420/618/636272691461725405.png">
             </label>
             <label>
-                <input type="radio" name="class" required value="rogue">
-                <img src="">
-                Rogue
+                <input type="radio" name="class" required value="bard">
+                Bard
+                <img class="classes" src="https://www.dndbeyond.com/avatars/thumbnails/6/369/420/618/636272705936709430.png">
             </label>
             <label>
                 <input type="radio" name="class" required value="cleric">
-                <img src="">
                 Cleric
+                <img class="classes" src="https://www.dndbeyond.com/avatars/thumbnails/6/371/420/618/636272706155064423.png">
             </label>
         </p>
         <button id="submitButton">Select Character Type</button>
