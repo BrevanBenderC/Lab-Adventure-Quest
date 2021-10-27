@@ -105,10 +105,9 @@ const fork = {
     }]
 };
 
-const quests = [
+export const quests = [
     goblins, 
     fork,
     werewolf,
-];
-
+]; 
 export default quests;
