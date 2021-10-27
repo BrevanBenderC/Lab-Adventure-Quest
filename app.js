@@ -6,5 +6,5 @@ playerForm.addEventListener('submit', function(event) {
     const formData = new FormData(playerForm);
     const user = generatePlayer(formData);
     savePlayer(user);
-    window.location = 'map';
+    window.location = './map';
 });
