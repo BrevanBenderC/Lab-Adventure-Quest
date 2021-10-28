@@ -15,7 +15,7 @@ for (let quest of quests){
         displayLink(quest);
     }
 }
-
+console.log(user);
 function displayLink(quest){
     const a = document.createElement('a');
     a.href = `../quest/?id=${quest.id}`;
